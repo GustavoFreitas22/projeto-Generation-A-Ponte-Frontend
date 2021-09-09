@@ -8,32 +8,42 @@
                     <h1 class="text-center ">CADASTRE-SE</h1>
                     <div class="form-group" >
                         <label for="nome">Razão Social</label>
-                        <input class=" form-control" type="text" name="nome" id="nome" placeholder="Digite nome Juridico">
+                        <input [(ngModel)]='user.nome' class=" form-control" type="text" name="nome" id="nome" placeholder="Digite nome Juridico">
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="nome">Registro</label>
+                        <input [(ngModel)]='user.registro' class=" form-control" type="text" name="resgistro" id="registro" placeholder="Digite o CNPJ ou MEI">
                     </div>
 
                     <div class="form-group" >
                         <label for="usuario">Usuário</label>
-                        <input class=" form-control" type="text" name="usuario" id="usuario" placeholder="Digite nome fantasia da Empresa/Ong">
+                        <input [(ngModel)]='user.usuario' class=" form-control" type="text" name="usuario" id="usuario" placeholder="Digite nome fantasia da Empresa/Ong">
                     </div>
 
                     <div class="form-group" >
                         <label for="email">Email</label>
-                        <input class=" form-control" type="email" name="email" id="email" placeholder="Digite email da Empresa/Ong">
+                        <input [(ngModel)]='user.email' class=" form-control" type="email" name="email" id="email" placeholder="Digite email da Empresa/Ong">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkFoto">Link da foto</label>
+                        <input [(ngModel)]='user.foto' type="text" class="form-control" name="linkFoto" id="linkFoto" placeholder="Seu link de foto">
                     </div>
 
                     <div class="form-group" >
                         <label for="senha">Senha</label>
-                        <input class=" form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input (input)='confirmarSenha($event)' class=" form-control" type="password" name="senha" id="senha" placeholder="Sua senha" >
                     </div>
 
                     <div class="form-group" >
                         <label for="confirmeSenha">Confirmar senha</label>
-                        <input class=" form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme a senha">
+                        <input [(ngModel)]='user.senha' class=" form-control" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme a senha">
                     </div>
 
                     <div class="form-group">
                         <label for="tipo">Tipo de Usuário</label>
-                        <select class="form-control" name="tipo" id="tipo">
+                        <select [(ngModel)]='user.tipo' class="form-control" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
                             <option>Selecione um tipo de usuário</option>
                             <option value="empresa">Empresa</option>
                             <option value="ong">Ong</option>
@@ -43,7 +53,7 @@
 
                     <div class="d-flex justify-content-center">
                         <button routerLink='/home' class="btn-lg text-danger" type="submit" id="borda" > Cancelar</button>
-                        <button class="btn-lg" type="submit" id="borda" routerLink='/entrar' > Entrar</button>
+                        <button class="btn-lg" type="submit" id="borda" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
                 </div>

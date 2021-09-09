@@ -8,9 +8,9 @@ ul.social-network li{
     margin: 0;
     padding: 5px;
 }
-.bg-amarelo{
-    background-color: #F2EC99;
-}
 .bg-azul{
     background-color: #99E9F2;
+}
+.borda-footer{
+    border: solid 2px #A0D9AE;
 }

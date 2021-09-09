@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+.borda{
+    border: solid 2px #9475BF;
+    border-radius: 25px;
+}
+.botao:hover{
+    background-color: #99E9F2;
+}
+.borda-img{
+    border: solid 1px rgb(211, 156, 224);
+    box-shadow: 5px 3px rgb(211, 156, 224);
+}

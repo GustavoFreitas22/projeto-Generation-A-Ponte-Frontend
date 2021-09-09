@@ -10,6 +10,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { FooterComponent } from './footer/footer.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { FeedComponent } from './feed/feed.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     SobreNosComponent,
     FooterComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    FeedComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
