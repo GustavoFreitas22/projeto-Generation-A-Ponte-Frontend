@@ -1,10 +1,10 @@
 .borda{
-    border: solid 2px #A0D9AE;
+    border: solid 2px #9475BF;
     border-radius: 25px;
 }
-.botao:hover{
+/* .botao:hover{
     background-color: #99E9F2;
-}
+} */
 .borda-img{
     border: solid 1px rgb(211, 156, 224);
     box-shadow: 5px 3px rgb(211, 156, 224);
@@ -12,16 +12,26 @@
 .feed{
     border-right: solid 2px #A0D9AE;
     border-left: solid 2px #A0D9AE;
+    background-color: #99E9F2;;
 }
-ul li{
-    color: #000;
+.botao{
+    background-color: #fff;
 }
 #menu{
-    background-color: rgb(211, 156, 224);
+    /* background-color: rgb(211, 156, 224); */
+    background-image: url('https://i.imgur.com/OqtsBWE.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover ;
+
 }
 .bg-amarelo{
-    background-color: #F2EC99;
+    background-color: #FFF;
 }
-.bg-cinza{
-    background-color: #adb5bd;
+
+#img-bg{
+    background-image: url('https://i.imgur.com/OqtsBWE.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover ;
 }

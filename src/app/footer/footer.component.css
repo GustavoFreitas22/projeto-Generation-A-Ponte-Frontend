@@ -14,3 +14,9 @@ ul.social-network li{
 .borda-footer{
     border: solid 2px #A0D9AE;
 }
+#img-bg{
+    background-image: url('https://i.imgur.com/OqtsBWE.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover ;
+}

@@ -29,6 +29,6 @@ export class TemaService {
     return this.http.put<Tema>('https://projetoaponte.herokuapp.com/tema', tema, this.token)
   }
   deleteTema(id:number){
-    return this.http.delete(`https://projetoaponte.herokuapp.com/postagem/${id}`, this.token)
+    return this.http.delete(`https://projetoaponte.herokuapp.com/tema/${id}`, this.token)
   }
 }

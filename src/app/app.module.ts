@@ -12,6 +12,12 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { MatchComponent } from './match/match.component';
 
 
 @NgModule({
@@ -23,7 +29,13 @@ import { TemaComponent } from './tema/tema.component';
     EntrarComponent,
     CadastrarComponent,
     FeedComponent,
-    TemaComponent
+    TemaComponent,
+    TemaEditComponent,
+    PostagemEditComponent,
+    PostagemDeleteComponent,
+    TemaDeleteComponent,
+    UserEditComponent,
+    MatchComponent
   ],
   imports: [
     BrowserModule,

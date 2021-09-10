@@ -23,6 +23,8 @@ export class EntrarComponent implements OnInit {
     this.authService.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
       this.userLogin = resp
 
+      this.router.navigate(['/feed'])
+
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
@@ -32,8 +34,10 @@ export class EntrarComponent implements OnInit {
       console.log(environment.nome)
       console.log(environment.foto)
       console.log(environment.id)
+      console.log(this.userLogin.id)
 
-      this.router.navigate(['/feed'])
+
+      
     }, erro=>{
       if(erro.status == 401){
         alert('Usuario ou senha incorreto')
