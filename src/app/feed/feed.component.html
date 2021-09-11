@@ -10,8 +10,7 @@
                     <h4 class="font-weigth-bold mt-5">{{nome}}</h4>
                 </li>
                 <li class="nav-item mt-5 mb-5 ">
-                    <button class="form-control btn borda botao" data-toggle="modal"
-                    data-target="#EditUser">Editar Usuario</button>
+                    <button class="form-control btn borda botao" [routerLink]="['/user-edit', idUser]">Editar Usuario</button>
                 </li>
                 <li class="nav-item mt-5 mb-5 ">
                     <button class="form-control btn btn-white borda botao" data-toggle="modal"
@@ -94,8 +93,7 @@
                     <div class="card-header">Anuncio!</div>
                     <div class="card-body">
                         <h5 class="card-title">Salve salve Usuarios da Ponte</h5>
-                        <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer
-                            preencher o conteúdo do card.</p>
+                        <p class="card-text">Você está por dentro das atualizações do projeto A Ponte! É um prazer te ter por aqui!!!</p>
                     </div>
                 </div>
             </div>
