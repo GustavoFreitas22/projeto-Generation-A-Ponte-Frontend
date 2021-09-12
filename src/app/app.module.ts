@@ -20,6 +20,7 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { MatchComponent } from './match/match.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { PaginaDevsComponent } from './pagina-devs/pagina-devs.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     TemaDeleteComponent,
     UserEditComponent,
     MatchComponent,
-    AlertasComponent
+    AlertasComponent,
+    PaginaDevsComponent
   ],
   imports: [
     BrowserModule,

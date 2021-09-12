@@ -10,6 +10,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { HomeComponent } from './home/home.component';
 import { MatchComponent } from './match/match.component';
+import { PaginaDevsComponent } from './pagina-devs/pagina-devs.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemaComponent } from './tema/tema.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'feed', component: FeedComponent},
   {path: 'tema', component: TemaComponent}, 
   {path: 'match', component: MatchComponent}, 
+  {path: 'devs', component: PaginaDevsComponent},
 
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent}, 
