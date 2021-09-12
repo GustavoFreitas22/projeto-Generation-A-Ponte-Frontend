@@ -17,7 +17,7 @@
                     data-target="#novaPostagem">Criar nova Postagem</button>
                 </li>
                 <li class="nav-item mt-5 mb-5 ">
-                    <button class="form-control btn btn-white borda botao">Seus Matches</button>
+                    <button class="form-control btn btn-white borda botao" routerLink='/match'>Seus Matches</button>
                 </li>
                 <li class="nav-item mt-5 mb-5 ">
                     <button class="form-control btn btn-white borda botao" (click)='sair()'>Sair</button>
@@ -64,12 +64,8 @@
                             <small class="text-muted mb-3">Tema: {{post.tema.descricao}}</small>
                             <p class="card-text"><small class="text-muted">{{post.data | date: 'dd/MM/yyyy'}} ás {{post.data|date: 'HH:mm'}}</small></p>
                         </div>
-
-
-                        <a class="text-info mr-3"  [routerLink]="['/postagem-edit', item.id]" href="">Editar Postagem</a>
-                        <a class="text-danger"  [routerLink]="['/postagem-delete', item.id]" href="">Apagar Postagem</a>
-
-
+                        <a class="text-info mr-3"  [routerLink]="['/postagem-edit', post.id]" href="">Editar Postagem</a>
+                        <a class="text-danger"  [routerLink]="['/postagem-delete', post.id]" href="">Apagar Postagem</a>
                     </div>
                     
                 </div>
@@ -145,60 +141,3 @@
     </div>
 </div>
 
-<!-- Modal de Edit User-->
-<div class="modal fade" id="EditUser" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Edição Usuário</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="d-flex justify-content-center">
-                <img src="{{foto}}" alt="foto user" height="150px" width="150px" class="rounded-circle shadow-lg p-1">
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input [(ngModel)]='user.nome' type="text" class="form-control" id="nome"
-                        placeholder="Digite o nome de Usuário">
-                </div>
-                <div class="form-group">
-                    <label for="nome">User name</label>
-                    <input [(ngModel)]='user.usuario' type="text" class="form-control" id="userName"
-                        placeholder="Digite o UserName">
-                </div>
-                <div class="form-group">
-                    <label for="nome">Foto</label>
-                    <input [(ngModel)]='user.foto' type="text" class="form-control" id="foto"
-                        placeholder="Digite o link da foto">
-                </div>
-                <div class="form-group">
-                    <label for="nome">Registro</label>
-                    <input [(ngModel)]='user.registro' type="text" class="form-control" id="registro"
-                        placeholder="Digite o registro">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input [(ngModel)]='user.email' type="text" class="form-control" id="email"
-                        placeholder="Digite o email">
-                </div>
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label [(ngModel)]='user.senha' for="senha">Confirmar Senha</label>
-                    <input type="password" name="ConfirmSenha" id="ConfirmSenha" class="form-control">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-info"
-                    data-dismiss="modal" (click)='editUser()'>Editar</button>
-            </div>
-        </div>
-    </div>
-</div>

@@ -8,25 +8,25 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal'
 export class AlertasService {
 
   constructor(
-    private bsModalService: BsModalService
+    private bsMService: BsModalService
   ) { }
 
-  private showAlert(message: string, type: string){
-    const bsModalRef: BsModalRef = this.bsModalService.show(AlertasComponent)
-    bsModalRef.content.type = type
-    bsModalRef.content.message = message
+  private showAlert(msg: string, tipo: string){
+    const bsModalRef: BsModalRef = this.bsMService.show(AlertasComponent)
+    bsModalRef.content.type = tipo
+    bsModalRef.content.message = msg
   }
 
-  showAlertDanger(message: string){
-    this.showAlert(message, 'danger')
+  showAlertDanger(msg: string){
+    this.showAlert(msg, 'danger')
   }
 
-  showAlertSuccess(message: string){
-    this.showAlert(message, 'success')
+  showAlertSuccess(msg: string){
+    this.showAlert(msg, 'success')
   }
 
-  showAlertInfo(message: string){
-    this.showAlert(message, 'info')
+  showAlertInfo(msg: string){
+    this.showAlert(msg, 'info')
   }
 
 }

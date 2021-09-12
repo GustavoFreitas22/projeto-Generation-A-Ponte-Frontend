@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../models/Postagem';
+import { Usuario } from '../models/Usuario';
+import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
 
 @Component({
   selector: 'app-match',
@@ -7,9 +13,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  listaPostagens: Postagem[]
+  listaPostagensIguais: Postagem[]
+
+  UserId = environment.id
+  user: Usuario = new Usuario()
+
+  temaId: number[]
+
+  constructor(private router: Router, private postagemService: PostagemService, private auth: AuthService) { }
+
+  ngOnInit(){
+
+    this.getAllPostagens()
+    this.getUserById()
+    this.matchPost()
   }
 
+  getAllPostagens(){
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+  }
+  getUserById(){
+    this.auth.getByIdUser(this.UserId).subscribe((resp: Usuario)=>{
+      this.user = resp
+      
+    })
+  }
+  getIdTemaByUserPostagem(){
+    this.temaId = this.user.postagem.map((post: Postagem)=>{
+      return post.tema.id
+    })
+  }
+  matchPost(){
+    this.listaPostagensIguais = this.listaPostagens.filter((post: Postagem)=>{
+      console.log(post.tema.id)
+      console.log("Tema id: ", this.temaId)
+      return this.temaId.includes(post.tema.id) && post.usuario.id != this.UserId      
+    })
+  }
 }

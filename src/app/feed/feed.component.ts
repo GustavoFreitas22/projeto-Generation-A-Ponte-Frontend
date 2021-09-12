@@ -78,9 +78,6 @@ export class FeedComponent implements OnInit {
       this.getAllPostagens()
     })
   }
-  editUser(){
-    console.log(this.user.postagem)
-  }
   sair(){
     this.router.navigate(['/home'])
     environment.token =''
