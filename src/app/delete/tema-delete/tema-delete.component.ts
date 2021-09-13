@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/models/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { TemaService } from 'src/app/service/tema.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-tema-delete',
@@ -16,6 +17,9 @@ export class TemaDeleteComponent implements OnInit {
   constructor(private temaService: TemaService, private route: ActivatedRoute, private router: Router, private alertas: AlertasService) { }
 
   ngOnInit(){
+    if(environment.token == ''){
+      this.router.navigate(['/entrar'])
+    }
     this.idTema = this.route.snapshot.params['id']
     this.findById(this.idTema)
   }

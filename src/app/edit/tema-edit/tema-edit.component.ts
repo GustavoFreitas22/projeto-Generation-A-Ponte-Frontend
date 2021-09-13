@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/models/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { TemaService } from 'src/app/service/tema.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-tema-edit',
@@ -17,6 +18,9 @@ export class TemaEditComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    if(environment.token == ''){
+      this.router.navigate(['/entrar'])
+    }
 
     let id = this.route.snapshot.params['id']
     this.findById(id)

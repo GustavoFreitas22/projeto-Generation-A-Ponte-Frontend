@@ -22,10 +22,12 @@ export class MatchComponent implements OnInit {
 
   temaId: number[]
 
-  constructor(private router: Router, private postagemService: PostagemService, private auth: AuthService) { }
+  constructor(private router: Router,private postagemService: PostagemService, private auth: AuthService) { }
 
   ngOnInit(){
-
+    if(environment.token == ''){
+      this.router.navigate(['/home'])
+    }
     this.getAllPostagens()
     this.getUserById()
     this.matchPost()
@@ -49,9 +51,8 @@ export class MatchComponent implements OnInit {
   }
   matchPost(){
     this.listaPostagensIguais = this.listaPostagens.filter((post: Postagem)=>{
-      console.log(post.tema.id)
-      console.log("Tema id: ", this.temaId)
       return this.temaId.includes(post.tema.id) && post.usuario.id != this.UserId      
     })
+    console.log(this.listaPostagensIguais)
   }
 }

@@ -43,7 +43,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
                     aria-labelledby="todasPostagens-tab">
-                    <div class="card mb-3 mt-3" *ngFor='let item of listaPostagem'>
+                    <div class="card mb-3 mt-3 borda-feed" *ngFor='let item of listaPostagem'>
                         <div class="card-body">
                             <h5 class="card-title">{{item.titulo}}</h5>
                             <p class="card-text"> {{item.texto}}
@@ -56,7 +56,7 @@
                 </div>
                 <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab" >
 
-                    <div class="card mb-3 mt-3" *ngFor='let post of user.postagem'>
+                    <div class="card mb-3 mt-3 borda-feed" *ngFor='let post of user.postagem'>
                         <div class="card-body">
                             <h5 class="card-title">{{post.titulo}}</h5>
                             <p class="card-text"> {{post.texto}}
@@ -65,12 +65,12 @@
                             <p class="card-text"><small class="text-muted">{{post.data | date: 'dd/MM/yyyy'}} ás {{post.data|date: 'HH:mm'}}</small></p>
                         </div>
                         <a class="text-info mr-3"  [routerLink]="['/postagem-edit', post.id]" href="">Editar Postagem</a>
-                        <a class="text-danger"  [routerLink]="['/postagem-delete', post.id]" href="">Apagar Postagem</a>
+                        <a class="text-danger mb-3"  [routerLink]="['/postagem-delete', post.id]" href="">Apagar Postagem</a>
                     </div>
                     
                 </div>
                 <div class="tab-pane fade" id="postagemTipo" role="tabpanel" aria-labelledby="postagemTipo-tab">
-                    <div class="card mb-3 mt-3" *ngFor='let tema of listaTemas'>
+                    <div class="card mb-3 mt-3 borda-feed" *ngFor='let tema of listaTemas'>
                         <h4 class="card-title mt-3">Tema: {{tema.descricao}} </h4>
                         <div class="card-body" *ngFor='let item of tema.postagem'>
                             <h5 class="card-title">{{item.titulo}}</h5>

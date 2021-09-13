@@ -9,6 +9,9 @@
     border: solid 1px rgb(211, 156, 224);
     box-shadow: 5px 3px rgb(211, 156, 224);
 }
+.borda-feed{
+    border: 2px solid #A0D9AE ;
+}
 .feed{
     border-right: solid 2px #A0D9AE;
     border-left: solid 2px #A0D9AE;
